@@ -5,16 +5,10 @@
 Lorang Boilerplate is a SvelteKit boilerplate designed for creative development. This boilerplate includes several features to enhance your development experience:
 
 - **BrowserSync**: Enables fast development and testing across multiple browsers.
+- **Nanostores**: A state manager.
 - **Locomotive Scroll**: Provides smooth scrolling with parallax effects and intersection object detection.
-- **modularLoad**: Page transitions and lazy loading.
+- **Swup**: Page transitions.
 - **BEM (Block Element Modifier)**: Ensures clean, reusable CSS for better maintainability.
-
-## Features
-
-- Fast development with BrowserSync
-- Smooth scrolling and parallax effects with Locomotive Scroll
-- Efficient page transitions and lazy loading using modularLoad
-- Clean and reusable CSS following BEM methodology
 
 ## Getting Started
 
