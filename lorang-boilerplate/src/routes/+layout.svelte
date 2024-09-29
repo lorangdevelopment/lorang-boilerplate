@@ -39,6 +39,12 @@
 	{/if}
 </svelte:head>
 <main>
+
+	<ul>
+		<li><a href="/">English</a></li>
+		<li><a href="/fr-fr">French</a></li>
+	</ul>
+
 	<h1 style="font-size: {utopiaClamp(24, 48)}">TEST Lorem ipsum dolor sit amet.</h1>
 	<slot />
 </main>

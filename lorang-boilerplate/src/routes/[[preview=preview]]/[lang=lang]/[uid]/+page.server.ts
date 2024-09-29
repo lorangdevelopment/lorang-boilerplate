@@ -2,15 +2,15 @@ import { asText } from '@prismicio/client';
 
 import { createClient } from '$lib/prismicio';
 
-export async function load({ fetch, cookies, params }) {
+export async function load({ params, fetch, cookies }) {
 	const client = createClient({ fetch, cookies });
 
 	const settings = await client.getSingle('settings', {
 		lang: params.lang || 'en-us'
 	});
 
-	const page = await client.getByUID('page', 'home', {
-		lang: params.lang || 'en-us'
+	const page = await client.getByUID('page', params.uid, {
+		lang: params.lang
 	});
 
 	return {
@@ -23,6 +23,12 @@ export async function load({ fetch, cookies, params }) {
 	};
 }
 
-export function entries() {
-	return [{}];
+export async function entries() {
+	const client = createClient();
+
+	const pages = await client.getAllByType('page');
+
+	return pages.map((page) => {
+		return { uid: page.uid };
+	});
 }

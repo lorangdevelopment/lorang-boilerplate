@@ -5,9 +5,16 @@ import { createClient } from '$lib/prismicio';
 export async function load({ params, fetch, cookies }) {
 	const client = createClient({ fetch, cookies });
 
-	const page = await client.getByUID('page', params.uid);
+	const settings = await client.getSingle('settings', {
+		lang: params.lang || 'en-us'
+	});
+
+	const page = await client.getByUID('page', params.uid, {
+		lang: params.lang || 'en-us'
+	});
 
 	return {
+		settings,
 		page,
 		title: asText(page.data.title),
 		meta_description: page.data.meta_description,

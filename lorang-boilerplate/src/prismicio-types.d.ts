@@ -4,7 +4,7 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice = never;
 
 /**
  * Content for Page documents
@@ -79,49 +79,71 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
 	Lang
 >;
 
-export type AllDocumentTypes = PageDocument;
+type SettingsDocumentDataSlicesSlice = never;
 
 /**
- * Primary content in *RichText → Default → Primary*
+ * Content for Settings documents
  */
-export interface RichTextSliceDefaultPrimary {
+interface SettingsDocumentData {
 	/**
-	 * Content field in *RichText → Default → Primary*
+	 * Slice Zone field in *Settings*
 	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: Lorem ipsum...
-	 * - **API ID Path**: rich_text.default.primary.content
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
 	 */
-	content: prismic.RichTextField;
+	slices: prismic.SliceZone<SettingsDocumentDataSlicesSlice> /**
+	 * Meta Title field in *Settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: settings.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */;
+	meta_title: prismic.KeyTextField;
+
+	/**
+	 * Meta Description field in *Settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: settings.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	meta_description: prismic.KeyTextField;
+
+	/**
+	 * Meta Image field in *Settings*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	meta_image: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for RichText Slice
+ * Settings document from Prismic
  *
- * - **API ID**: `default`
- * - **Description**: RichText
- * - **Documentation**: https://prismic.io/docs/slice
+ * - **API ID**: `settings`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
  */
-export type RichTextSliceDefault = prismic.SharedSliceVariation<
-	'default',
-	Simplify<RichTextSliceDefaultPrimary>,
-	never
+export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<SettingsDocumentData>,
+	'settings',
+	Lang
 >;
 
-/**
- * Slice variation for *RichText*
- */
-type RichTextSliceVariation = RichTextSliceDefault;
-
-/**
- * RichText Shared Slice
- *
- * - **API ID**: `rich_text`
- * - **Description**: RichText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type RichTextSlice = prismic.SharedSlice<'rich_text', RichTextSliceVariation>;
+export type AllDocumentTypes = PageDocument | SettingsDocument;
 
 declare module '@prismicio/client' {
 	interface CreateClient {
@@ -131,16 +153,26 @@ declare module '@prismicio/client' {
 		): prismic.Client<AllDocumentTypes>;
 	}
 
+	interface CreateWriteClient {
+		(
+			repositoryNameOrEndpoint: string,
+			options: prismic.WriteClientConfig
+		): prismic.WriteClient<AllDocumentTypes>;
+	}
+
+	interface CreateMigration {
+		(): prismic.Migration<AllDocumentTypes>;
+	}
+
 	namespace Content {
 		export type {
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
-			AllDocumentTypes,
-			RichTextSlice,
-			RichTextSliceDefaultPrimary,
-			RichTextSliceVariation,
-			RichTextSliceDefault
+			SettingsDocument,
+			SettingsDocumentData,
+			SettingsDocumentDataSlicesSlice,
+			AllDocumentTypes
 		};
 	}
 }
