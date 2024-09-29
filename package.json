@@ -3,5 +3,8 @@
     "browser-sync": "^3.0.3",
     "locomotive-scroll": "^4.1.4",
     "modularload": "^1.2.8"
+  },
+  "devDependencies": {
+    "@types/locomotive-scroll": "^4.1.3"
   }
 }
