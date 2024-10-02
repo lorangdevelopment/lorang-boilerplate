@@ -1,12 +1,13 @@
 <script lang="ts">
+	import '$lib/styles/app.css';
+	import '$lib/styles/utilities.css';
 	import { PrismicPreview } from '@prismicio/svelte/kit';
 	import { page } from '$app/stores';
 	import { repositoryName } from '$lib/prismicio';
 	import { onMount } from 'svelte';
-	import { utopiaClamp } from '../scripts/utils/utopiaClamp';
-	import { setViewportSize } from '../scripts/utils/setViewportSize';
-	import { Transitions } from '../scripts/classes/Transitions';
-	import { Scroll } from '../scripts/classes/Scroll';
+	import { setViewportSize } from '../lib/scripts/utils/setViewportSize';
+	import { Transitions } from '../lib/scripts/classes/Transitions';
+	import { Scroll } from '../lib/scripts/classes/Scroll';
 
 	// Initialize the Transitions class
 	const transitions = new Transitions();
@@ -16,13 +17,13 @@
 	Scroll.init();
 
 	onMount(() => {
-    setViewportSize();
-    window.addEventListener('resize', setViewportSize);
+		setViewportSize();
+		window.addEventListener('resize', setViewportSize);
 
-    return () => {
-        window.removeEventListener('resize', setViewportSize);
-    };
-});
+		return () => {
+			window.removeEventListener('resize', setViewportSize);
+		};
+	});
 </script>
 
 <svelte:head>
@@ -39,13 +40,14 @@
 	{/if}
 </svelte:head>
 <main>
-
-	<ul>
+	<!--
+		<ul>
 		<li><a href="/">English</a></li>
 		<li><a href="/fr-fr">French</a></li>
 	</ul>
 
 	<h1 style="font-size: {utopiaClamp(24, 48)}">TEST Lorem ipsum dolor sit amet.</h1>
+	-->
 	<slot />
 </main>
 <PrismicPreview {repositoryName} />

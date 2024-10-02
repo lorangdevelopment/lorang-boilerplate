@@ -2,8 +2,8 @@
 
 Want to quickly get started building your own project with [Prismic][prismic] and [SvelteKit][sveltekit]? This project includes basic configurations and nothing else. The project includes one Rich Text Slice, a homepage, and a dynamic page.
 
-- **Demo**: [Open live demo][live-demo]
-- **Learn more about Prismic and SvelteKit**: [Prismic SvelteKit Documentation][prismic-docs]
+-   **Demo**: [Open live demo][live-demo]
+-   **Learn more about Prismic and SvelteKit**: [Prismic SvelteKit Documentation][prismic-docs]
 
 &nbsp;
 
@@ -47,8 +47,8 @@ Your new page will be accessible by its URL, but it won't appear on the website 
 
 This website is preconfigured with Prismic. It has two Prismic packages installed:
 
-- `@prismicio/client` provides helpers for fetching content from Prismic
-- `@prismicio/svelte` provides Svelte components for rendering content from Prismic
+-   `@prismicio/client` provides helpers for fetching content from Prismic
+-   `@prismicio/svelte` provides Svelte components for rendering content from Prismic
 
 These packages are already integrated and employed in this app. Take a look at the code to see how they're used.
 
@@ -61,16 +61,16 @@ There are two steps to rendering content from Prismic in your SvelteKit project:
 
 Here are some of the files in your project that you can edit:
 
-- `src/lib/prismicio.ts` - This file includes configuration for `@prismicio/client` and exports useful API helpers.
-- `src/routes/+layout.svelte` - This is your layout component.
-- `src/routes/[[preview=preview]]/+page.svelte` - This is the app homepage. It queries and renders a page document with the UID (unique identifier) "home" from the Prismic API.
-- `src/routes/[[preview=preview]]/[uid]/+page.svelte` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
-- `src/lib/slices/*/index.svelte` - Each Slice in your project has an `index.svelte` file that renders the Slice component. Edit this file to customize your Slices.
+-   `src/lib/prismicio.ts` - This file includes configuration for `@prismicio/client` and exports useful API helpers.
+-   `src/routes/+layout.svelte` - This is your layout component.
+-   `src/routes/[[preview=preview]]/+page.svelte` - This is the app homepage. It queries and renders a page document with the UID (unique identifier) "home" from the Prismic API.
+-   `src/routes/[[preview=preview]]/[uid]/+page.svelte` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
+-   `src/lib/slices/*/index.svelte` - Each Slice in your project has an `index.svelte` file that renders the Slice component. Edit this file to customize your Slices.
 
 These are important files that you should leave as-is:
 
-- `src/routes/slice-simulator/+page.svelte` - Do not edit or delete this file. This file simulates your Slice components in development.
-- `src/lib/slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's `index.svelte` file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
+-   `src/routes/slice-simulator/+page.svelte` - Do not edit or delete this file. This file simulates your Slice components in development.
+-   `src/lib/slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's `index.svelte` file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
 
 Learn more about how to edit your components with [Fetch Data in SvelteKit](https://prismic.io/docs/svelte-fetch-data) and [Template Content in SvelteKit](https://prismic.io/docs/svelte-template).
 

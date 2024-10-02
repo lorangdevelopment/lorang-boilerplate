@@ -4,7 +4,7 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice = HeroSlice;
 
 /**
  * Content for Page documents
@@ -145,6 +145,128 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 
 export type AllDocumentTypes = PageDocument | SettingsDocument;
 
+/**
+ * Primary content in *Hero → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+	/**
+	 * Heading field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.RichTextField;
+
+	/**
+	 * Paragraph field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.paragraph
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	paragraph: prismic.RichTextField;
+
+	/**
+	 * Time Location field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.time_location
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	time_location: prismic.KeyTextField;
+
+	/**
+	 * News Link field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.news_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	news_link: prismic.LinkField;
+
+	/**
+	 * News Link Label field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.news_link_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	news_link_label: prismic.KeyTextField;
+
+	/**
+	 * News Link Second field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.news_link_second
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	news_link_second: prismic.LinkField;
+
+	/**
+	 * News Link Second Label field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.news_link_second_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	news_link_second_label: prismic.KeyTextField;
+
+	/**
+	 * News Link Third field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.news_link_third
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	news_link_third: prismic.LinkField;
+
+	/**
+	 * News Link Third Label field in *Hero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.news_link_third_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	news_link_third_label: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<HeroSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
+
 declare module '@prismicio/client' {
 	interface CreateClient {
 		(
@@ -172,7 +294,11 @@ declare module '@prismicio/client' {
 			SettingsDocument,
 			SettingsDocumentData,
 			SettingsDocumentDataSlicesSlice,
-			AllDocumentTypes
+			AllDocumentTypes,
+			HeroSlice,
+			HeroSliceDefaultPrimary,
+			HeroSliceVariation,
+			HeroSliceDefault
 		};
 	}
 }

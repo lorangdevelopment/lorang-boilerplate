@@ -1,0 +1,72 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Thought"
+						}
+					}
+				]
+			},
+			"time_location": {
+				"__TYPE__": "FieldContent",
+				"value": "doll",
+				"type": "Text"
+			},
+			"news_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			},
+			"news_link_label": {
+				"__TYPE__": "FieldContent",
+				"value": "deeply",
+				"type": "Text"
+			},
+			"news_link_second": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"news_link_second_label": {
+				"__TYPE__": "FieldContent",
+				"value": "football",
+				"type": "Text"
+			},
+			"news_link_third": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			},
+			"news_link_third_label": {
+				"__TYPE__": "FieldContent",
+				"value": "enjoy",
+				"type": "Text"
+			},
+			"paragraph": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nulla nostrud eiusmod incididunt quis nulla consectetur ut est laborum ex dolor. Et enim aute eu mollit ex ad cupidatat eiusmod voluptate irure consectetur."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
