@@ -4,7 +4,7 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = HeroSlice;
+type PageDocumentDataSlicesSlice = FeaturedTextSlice | HeroSlice;
 
 /**
  * Content for Page documents
@@ -146,11 +146,38 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 export type AllDocumentTypes = PageDocument | SettingsDocument;
 
 /**
- * Primary content in *Hero → Default → Primary*
+ * Default variation for FeaturedText Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedTextSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	never
+>;
+
+/**
+ * Slice variation for *FeaturedText*
+ */
+type FeaturedTextSliceVariation = FeaturedTextSliceDefault;
+
+/**
+ * FeaturedText Shared Slice
+ *
+ * - **API ID**: `featured_text`
+ * - **Description**: FeaturedText
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedTextSlice = prismic.SharedSlice<'featured_text', FeaturedTextSliceVariation>;
+
+/**
+ * Primary content in *HomeHero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
 	/**
-	 * Heading field in *Hero → Default → Primary*
+	 * Heading field in *HomeHero → Default → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
@@ -160,7 +187,7 @@ export interface HeroSliceDefaultPrimary {
 	heading: prismic.RichTextField;
 
 	/**
-	 * Paragraph field in *Hero → Default → Primary*
+	 * Paragraph field in *HomeHero → Default → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
@@ -170,7 +197,7 @@ export interface HeroSliceDefaultPrimary {
 	paragraph: prismic.RichTextField;
 
 	/**
-	 * Time Location field in *Hero → Default → Primary*
+	 * Time Location field in *HomeHero → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -180,7 +207,7 @@ export interface HeroSliceDefaultPrimary {
 	time_location: prismic.KeyTextField;
 
 	/**
-	 * News Link field in *Hero → Default → Primary*
+	 * News Link field in *HomeHero → Default → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -190,7 +217,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link: prismic.LinkField;
 
 	/**
-	 * News Link Label field in *Hero → Default → Primary*
+	 * News Link Label field in *HomeHero → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -200,7 +227,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link_label: prismic.KeyTextField;
 
 	/**
-	 * News Link Second field in *Hero → Default → Primary*
+	 * News Link Second field in *HomeHero → Default → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -210,7 +237,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link_second: prismic.LinkField;
 
 	/**
-	 * News Link Second Label field in *Hero → Default → Primary*
+	 * News Link Second Label field in *HomeHero → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -220,7 +247,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link_second_label: prismic.KeyTextField;
 
 	/**
-	 * News Link Third field in *Hero → Default → Primary*
+	 * News Link Third field in *HomeHero → Default → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -230,7 +257,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link_third: prismic.LinkField;
 
 	/**
-	 * News Link Third Label field in *Hero → Default → Primary*
+	 * News Link Third Label field in *HomeHero → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -238,10 +265,50 @@ export interface HeroSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	news_link_third_label: prismic.KeyTextField;
+
+	/**
+	 * Tagline field in *HomeHero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.tagline
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	tagline: prismic.KeyTextField;
+
+	/**
+	 * Info field in *HomeHero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.info
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	info: prismic.KeyTextField;
+
+	/**
+	 * Brand field in *HomeHero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.brand
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	brand: prismic.KeyTextField;
+
+	/**
+	 * Cta Link Label field in *HomeHero → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.cta
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	cta: prismic.KeyTextField;
 }
 
 /**
- * Default variation for Hero Slice
+ * Default variation for HomeHero Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -254,12 +321,12 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *Hero*
+ * Slice variation for *HomeHero*
  */
 type HeroSliceVariation = HeroSliceDefault;
 
 /**
- * Hero Shared Slice
+ * HomeHero Shared Slice
  *
  * - **API ID**: `hero`
  * - **Description**: Hero
@@ -295,6 +362,9 @@ declare module '@prismicio/client' {
 			SettingsDocumentData,
 			SettingsDocumentDataSlicesSlice,
 			AllDocumentTypes,
+			FeaturedTextSlice,
+			FeaturedTextSliceVariation,
+			FeaturedTextSliceDefault,
 			HeroSlice,
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,

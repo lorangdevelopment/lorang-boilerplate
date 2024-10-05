@@ -1,7 +1,7 @@
 {
 	"id": "hero",
 	"type": "SharedSlice",
-	"name": "Hero",
+	"name": "HomeHero",
 	"description": "Hero",
 	"variations": [
 		{
@@ -82,6 +82,34 @@
 					"type": "Text",
 					"config": {
 						"label": "News Link Third Label",
+						"placeholder": ""
+					}
+				},
+				"tagline": {
+					"type": "Text",
+					"config": {
+						"label": "Tagline",
+						"placeholder": ""
+					}
+				},
+				"info": {
+					"type": "Text",
+					"config": {
+						"label": "Info",
+						"placeholder": ""
+					}
+				},
+				"brand": {
+					"type": "Text",
+					"config": {
+						"label": "Brand",
+						"placeholder": ""
+					}
+				},
+				"cta": {
+					"type": "Text",
+					"config": {
+						"label": "Cta Link Label",
 						"placeholder": ""
 					}
 				}

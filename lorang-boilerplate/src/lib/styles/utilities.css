@@ -157,23 +157,16 @@ template {
 [hidden] {
 	display: none;
 }
+::selection {
+	background-color: #c9fd0e;
+	color: #000000;
+}
+
+::-moz-selection {
+	background-color: #c9fd0e;
+	color: #000000;
+}
 :root {
-	--color-transparent: transparent;
-	--color-current: currentColor;
-	--color-black: #000000;
-	--color-white: #ffffff;
-	--color-primary: #ff3b36;
-	--color-secondary: #efeece;
-	--color-red: #ff3b36;
-	--color-beige: #efeece;
-	--color-beige-light: #f5f5e7;
-	--gray-100: #f4f4f4;
-	--gray-200: #e4e1e1;
-	--gray-300: #e0e0e0;
-	--gray-400: #828282;
-	--gray-600: #333333;
-	--gray-800: #252933;
-	--gray-900: #141414;
 }
 :root {
 	font-family: 'Suisse Intl', 'Lucida Sans', Tahoma, sans-serif;
@@ -200,28 +193,54 @@ h4,
 h5,
 h6 {
 	font-family: 'Suisse Intl', 'Lucida Sans', Tahoma, sans-serif;
-	font-weight: 400;
+	font-weight: 300;
 	line-height: 1;
 	letter-spacing: -0.01em;
 	font-size: inherit;
 	margin: inherit;
 }
+h1,
+*.h2__title {
+	font-size: 40px;
+	font-family: 'Suisse Intl', 'Lucida Sans', Tahoma, sans-serif;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: -0.01em;
+}
+@media (min-width: 1024px) {
+	h1,
+	*.h2__title {
+		font-size: 64px;
+	}
+}
+h5 {
+	font-size: 16px;
+	font-family: 'Suisse Intl', 'Lucida Sans', Tahoma, sans-serif;
+	font-weight: normal;
+	line-height: 1.4;
+	margin-bottom: 1.4em;
+}
+@media (min-width: 1024px) {
+	h5 {
+		font-size: 20px;
+	}
+}
 @font-face {
 	font-family: 'Suisse Intl';
 	src: url(/fonts/suisseintl-regular-webm.45afd5bc.woff2) format('woff2');
-	font-weight: 100;
+	font-weight: inherit;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Suisse Intl SemiBold';
 	src: url(/fonts/suisseintl-semibold-webm.eca61528.woff2) format('woff2');
-	font-weight: 100;
+	font-weight: inherit;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Suisse Intl Mono';
 	src: url(/fonts/SuisseIntlMono-Regular.e05cf9ac.woff2) format('woff2');
-	font-weight: 100;
+	font-weight: inherit;
 	font-style: normal;
 }
 .color-transparent {

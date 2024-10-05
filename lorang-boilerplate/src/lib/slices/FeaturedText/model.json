@@ -1,0 +1,16 @@
+{
+	"id": "featured_text",
+	"type": "SharedSlice",
+	"name": "FeaturedText",
+	"description": "FeaturedText",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": ""
+		}
+	]
+}

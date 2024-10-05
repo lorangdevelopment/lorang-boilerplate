@@ -65,6 +65,26 @@
 						}
 					}
 				]
+			},
+			"tagline": {
+				"__TYPE__": "FieldContent",
+				"value": "thee",
+				"type": "Text"
+			},
+			"info": {
+				"__TYPE__": "FieldContent",
+				"value": "accurate",
+				"type": "Text"
+			},
+			"brand": {
+				"__TYPE__": "FieldContent",
+				"value": "century",
+				"type": "Text"
+			},
+			"cta": {
+				"__TYPE__": "FieldContent",
+				"value": "cowboy",
+				"type": "Text"
 			}
 		},
 		"items": []
