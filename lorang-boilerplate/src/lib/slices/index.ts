@@ -2,8 +2,10 @@
 
 import FeaturedText from './FeaturedText/index.svelte';
 import HomeHero from './HomeHero/index.svelte';
+import WorkList from './WorkList/index.svelte';
 
 export const components = {
 	featured_text: FeaturedText,
-	hero: HomeHero
+	hero: HomeHero,
+	work_list: WorkList
 };

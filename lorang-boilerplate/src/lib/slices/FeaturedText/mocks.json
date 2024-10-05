@@ -2,7 +2,53 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Equipment"
+						}
+					}
+				]
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"cta_link_label": {
+				"__TYPE__": "FieldContent",
+				"value": "from",
+				"type": "Text"
+			},
+			"paragraph": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolor nulla id proident consequat amet mollit excepteur dolor ut velit."
+						}
+					}
+				]
+			},
+			"paragraph_second": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis nisi labore Lorem mollit. Occaecat ut ipsum ullamco minim. Irure sint nulla consequat nisi ea exercitation cupidatat consectetur consequat tempor in nulla ullamco elit."
+						}
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]

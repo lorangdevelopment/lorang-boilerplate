@@ -84,7 +84,7 @@
 		<div class="row-hero-case-study__info ff-mono tt-uppercase">{slice.primary.info}</div>
 		<div class="row-hero-case-study__brand ff-mono tt-uppercase">{slice.primary.brand}</div>
 		<div class="row-hero-case-study__cta btn__underline ff-mono tt-uppercase">
-			<a href="/">
+			<PrismicLink field={slice.primary.cta_link}>
 				{slice.primary.cta}
 				<svg viewBox="0 0 8 3" fill="none" xmlns="http://www.w3.org/2000/svg"
 					><path
@@ -92,7 +92,7 @@
 						fill="currentColor"
 					></path></svg
 				>
-			</a>
+			</PrismicLink>
 		</div>
 	</div>
 </section>

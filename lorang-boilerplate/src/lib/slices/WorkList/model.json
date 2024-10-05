@@ -1,0 +1,16 @@
+{
+	"id": "work_list",
+	"type": "SharedSlice",
+	"name": "WorkList",
+	"description": "WorkList",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": ""
+		}
+	]
+}

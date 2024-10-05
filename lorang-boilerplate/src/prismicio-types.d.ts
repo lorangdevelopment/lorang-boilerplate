@@ -4,7 +4,7 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = FeaturedTextSlice | HeroSlice;
+type PageDocumentDataSlicesSlice = WorkListSlice | FeaturedTextSlice | HeroSlice;
 
 /**
  * Content for Page documents
@@ -146,6 +146,61 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 export type AllDocumentTypes = PageDocument | SettingsDocument;
 
 /**
+ * Primary content in *FeaturedText → Default → Primary*
+ */
+export interface FeaturedTextSliceDefaultPrimary {
+	/**
+	 * Heading field in *FeaturedText → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: featured_text.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.RichTextField;
+
+	/**
+	 * Cta Link field in *FeaturedText → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: featured_text.default.primary.cta_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	cta_link: prismic.LinkField;
+
+	/**
+	 * Cta Link Label field in *FeaturedText → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: featured_text.default.primary.cta_link_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	cta_link_label: prismic.KeyTextField;
+
+	/**
+	 * Paragraph field in *FeaturedText → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: featured_text.default.primary.paragraph
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	paragraph: prismic.RichTextField;
+
+	/**
+	 * Paragraph Second field in *FeaturedText → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: featured_text.default.primary.paragraph_second
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	paragraph_second: prismic.RichTextField;
+}
+
+/**
  * Default variation for FeaturedText Slice
  *
  * - **API ID**: `default`
@@ -154,7 +209,7 @@ export type AllDocumentTypes = PageDocument | SettingsDocument;
  */
 export type FeaturedTextSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Record<string, never>,
+	Simplify<FeaturedTextSliceDefaultPrimary>,
 	never
 >;
 
@@ -297,6 +352,16 @@ export interface HeroSliceDefaultPrimary {
 	brand: prismic.KeyTextField;
 
 	/**
+	 * Cta Link field in *HomeHero → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.default.primary.cta_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	cta_link: prismic.LinkField;
+
+	/**
 	 * Cta Link Label field in *HomeHero → Default → Primary*
 	 *
 	 * - **Field Type**: Text
@@ -334,6 +399,33 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
 
+/**
+ * Default variation for WorkList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkListSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	never
+>;
+
+/**
+ * Slice variation for *WorkList*
+ */
+type WorkListSliceVariation = WorkListSliceDefault;
+
+/**
+ * WorkList Shared Slice
+ *
+ * - **API ID**: `work_list`
+ * - **Description**: WorkList
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkListSlice = prismic.SharedSlice<'work_list', WorkListSliceVariation>;
+
 declare module '@prismicio/client' {
 	interface CreateClient {
 		(
@@ -363,12 +455,16 @@ declare module '@prismicio/client' {
 			SettingsDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			FeaturedTextSlice,
+			FeaturedTextSliceDefaultPrimary,
 			FeaturedTextSliceVariation,
 			FeaturedTextSliceDefault,
 			HeroSlice,
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,
-			HeroSliceDefault
+			HeroSliceDefault,
+			WorkListSlice,
+			WorkListSliceVariation,
+			WorkListSliceDefault
 		};
 	}
 }
