@@ -167,6 +167,8 @@ template {
 	color: #000000;
 }
 :root {
+	--color-black: #0000000;
+	--color-white: #fffffff;
 }
 :root {
 	font-family: 'Suisse Intl', 'Lucida Sans', Tahoma, sans-serif;
@@ -218,6 +220,7 @@ h5 {
 	font-family: 'Suisse Intl', 'Lucida Sans', Tahoma, sans-serif;
 	font-weight: normal;
 	line-height: 1.4;
+	margin-top: 0em;
 	margin-bottom: 1.4em;
 }
 @media (min-width: 1024px) {
@@ -276,100 +279,28 @@ h5 {
 	background-color: var(--color-white);
 }
 .color-primary {
-	color: #ff3b36;
+	color: none;
 	color: var(--color-primary);
 }
 .bg-color-primary {
-	background-color: #ff3b36;
+	background-color: none;
 	background-color: var(--color-primary);
 }
 .color-secondary {
-	color: #efeece;
+	color: none;
 	color: var(--color-secondary);
 }
 .bg-color-secondary {
-	background-color: #efeece;
+	background-color: none;
 	background-color: var(--color-secondary);
 }
 .color-red {
-	color: #ff3b36;
+	color: none;
 	color: var(--color-red);
 }
 .bg-color-red {
-	background-color: #ff3b36;
+	background-color: none;
 	background-color: var(--color-red);
-}
-.color-beige {
-	color: #efeece;
-	color: var(--color-beige);
-}
-.bg-color-beige {
-	background-color: #efeece;
-	background-color: var(--color-beige);
-}
-.color-beige-light {
-	color: #f5f5e7;
-	color: var(--color-beige-light);
-}
-.bg-color-beige-light {
-	background-color: #f5f5e7;
-	background-color: var(--color-beige-light);
-}
-.gray-100 {
-	color: #f4f4f4;
-	color: var(--gray-100);
-}
-.bg-gray-100 {
-	background-color: #f4f4f4;
-	background-color: var(--gray-100);
-}
-.gray-200 {
-	color: #e4e1e1;
-	color: var(--gray-200);
-}
-.bg-gray-200 {
-	background-color: #e4e1e1;
-	background-color: var(--gray-200);
-}
-.gray-300 {
-	color: #e0e0e0;
-	color: var(--gray-300);
-}
-.bg-gray-300 {
-	background-color: #e0e0e0;
-	background-color: var(--gray-300);
-}
-.gray-400 {
-	color: #828282;
-	color: var(--gray-400);
-}
-.bg-gray-400 {
-	background-color: #828282;
-	background-color: var(--gray-400);
-}
-.gray-600 {
-	color: #333333;
-	color: var(--gray-600);
-}
-.bg-gray-600 {
-	background-color: #333333;
-	background-color: var(--gray-600);
-}
-.gray-800 {
-	color: #252933;
-	color: var(--gray-800);
-}
-.bg-gray-800 {
-	background-color: #252933;
-	background-color: var(--gray-800);
-}
-.gray-900 {
-	color: #141414;
-	color: var(--gray-900);
-}
-.bg-gray-900 {
-	background-color: #141414;
-	background-color: var(--gray-900);
 }
 .box-auto {
 	aspect-ratio: var(--ratio);
@@ -393,7 +324,7 @@ h5 {
 	aspect-ratio: 1.5;
 }
 .box-landscape {
-	aspect-ratio: 1.3333333333;
+	aspect-ratio: 1none3333;
 }
 .box-wide-angle {
 	aspect-ratio: 1.1428571429;
@@ -430,7 +361,7 @@ h5 {
 		aspect-ratio: 1.5;
 	}
 	.box-md-landscape {
-		aspect-ratio: 1.3333333333;
+		aspect-ratio: 1none3333;
 	}
 	.box-md-wide-angle {
 		aspect-ratio: 1.1428571429;
@@ -468,7 +399,7 @@ h5 {
 		aspect-ratio: 1.5;
 	}
 	.box-lg-landscape {
-		aspect-ratio: 1.3333333333;
+		aspect-ratio: 1none3333;
 	}
 	.box-lg-wide-angle {
 		aspect-ratio: 1.1428571429;
@@ -506,7 +437,7 @@ h5 {
 		aspect-ratio: 1.5;
 	}
 	.box-xl-landscape {
-		aspect-ratio: 1.3333333333;
+		aspect-ratio: 1none3333;
 	}
 	.box-xl-wide-angle {
 		aspect-ratio: 1.1428571429;
@@ -544,7 +475,7 @@ h5 {
 		aspect-ratio: 1.5;
 	}
 	.box-xxl-landscape {
-		aspect-ratio: 1.3333333333;
+		aspect-ratio: 1none3333;
 	}
 	.box-xxl-wide-angle {
 		aspect-ratio: 1.1428571429;
@@ -582,7 +513,7 @@ h5 {
 		aspect-ratio: 1.5;
 	}
 	.box-xxxl-landscape {
-		aspect-ratio: 1.3333333333;
+		aspect-ratio: 1none3333;
 	}
 	.box-xxxl-wide-angle {
 		aspect-ratio: 1.1428571429;
@@ -10561,7 +10492,7 @@ h5 {
 	line-height: 1.28571429;
 }
 .lh-133 {
-	line-height: 1.33333333;
+	line-height: 1none33;
 }
 .lh-137 {
 	line-height: 1.375;
@@ -10616,7 +10547,7 @@ h5 {
 		line-height: 1.28571429;
 	}
 	.lh-md-133 {
-		line-height: 1.33333333;
+		line-height: 1none33;
 	}
 	.lh-md-137 {
 		line-height: 1.375;
@@ -10672,7 +10603,7 @@ h5 {
 		line-height: 1.28571429;
 	}
 	.lh-lg-133 {
-		line-height: 1.33333333;
+		line-height: 1none33;
 	}
 	.lh-lg-137 {
 		line-height: 1.375;
@@ -10728,7 +10659,7 @@ h5 {
 		line-height: 1.28571429;
 	}
 	.lh-xl-133 {
-		line-height: 1.33333333;
+		line-height: 1none33;
 	}
 	.lh-xl-137 {
 		line-height: 1.375;
@@ -10784,7 +10715,7 @@ h5 {
 		line-height: 1.28571429;
 	}
 	.lh-xxl-133 {
-		line-height: 1.33333333;
+		line-height: 1none33;
 	}
 	.lh-xxl-137 {
 		line-height: 1.375;
@@ -10840,7 +10771,7 @@ h5 {
 		line-height: 1.28571429;
 	}
 	.lh-xxxl-133 {
-		line-height: 1.33333333;
+		line-height: 1none33;
 	}
 	.lh-xxxl-137 {
 		line-height: 1.375;

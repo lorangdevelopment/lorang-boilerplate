@@ -3,17 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Thought"
-						}
-					}
-				]
-			},
 			"time_location": {
 				"__TYPE__": "FieldContent",
 				"value": "doll",
@@ -92,6 +81,17 @@
 					"__TYPE__": "ExternalLink",
 					"url": "http://twitter.com"
 				}
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Dirty"
+						}
+					}
+				]
 			}
 		},
 		"items": []

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { time } from '$lib/scripts/utils/clock';
-	import type { Content } from '@prismicio/client';
 	import { PrismicRichText, PrismicLink } from '@prismicio/svelte';
+	import type { Content } from '@prismicio/client';
 
 	export let slice: Content.HeroSlice;
 
@@ -19,36 +19,36 @@
 </script>
 
 <section
-	class="homehero-section mb-60 mb-lg-70 position-relative"
+	class="hero hero--home mb-60 mb-lg-70 position-relative"
 	data-scroll
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	<div class="row-hero pl-15 pr-15">
-		<span class="row-hero__title m-0">
-			<PrismicRichText field={slice.primary.heading} />
+	<div class="hero__row grid-column-md-12 pl-15 pr-15">
+		<span class="hero__title m-0">
+			<PrismicRichText field={slice.primary.title} />
 		</span>
-		<span class="row-hero__paragraph">
+		<span class="hero__paragraph">
 			<PrismicRichText field={slice.primary.paragraph} />
 		</span>
-		<span class="row-hero__time ff-mono tt-uppercase" style="font-size:10px;">
+		<span class="hero__time ff-mono tt-uppercase" style="font-size:10px;">
 			<span>{slice.primary.time_location} {$time}</span>
 		</span>
-		<div class="row-hero-news" style="font-size:10px;">
-			<div class="row-hero-news__pagination">
+		<div class="hero__news">
+			<div class="hero__news-pagination">
 				{#key resetKey}
-					<span class="row-hero-news__lineWrap">
-						<span class="row-hero-news__line"></span>
+					<span class="hero__news-line-wrap">
+						<span class="hero__news-line"></span>
 					</span>
-					<span class="row-hero-news__lineWrap">
-						<span class="row-hero-news__line"></span>
+					<span class="hero__news-line-wrap">
+						<span class="hero__news-line"></span>
 					</span>
-					<span class="row-hero-news__lineWrap">
-						<span class="row-hero-news__line"></span>
+					<span class="hero__news-line-wrap">
+						<span class="hero__news-line"></span>
 					</span>
 				{/key}
 			</div>
-			<div class="row-hero-news__news ff-mono tt-uppercase">
+			<div class="hero__news-content ff-mono tt-uppercase">
 				{#key resetKey}
 					<PrismicLink field={slice.primary.news_link}>
 						{slice.primary.news_link_label}
@@ -64,13 +64,13 @@
 		</div>
 	</div>
 	<div
-		class="row-hero-case-study pl-15 pr-15 --has-bg --has-text-color"
+		class="hero__case-study grid-row-1 grid-column-2 grid-row-md-1 grid-column-md-12 pl-15 pr-15 --has-bg --has-text-color"
 		style="--text-color: #ffffff; --bg-color: #000000;"
 	>
-		<div class="row-hero-case-study__mediaWrap">
-			<div class="row-hero-case-study__media">
+		<div class="hero__case-study-media-wrap">
+			<div class="hero__case-study-media">
 				<video
-					class="row-hero-case-study__video"
+					class="hero__case-study-video"
 					src="/Nightjar-Digital-Product-Company.mp4"
 					autoplay
 					muted
@@ -80,10 +80,10 @@
 				></video>
 			</div>
 		</div>
-		<div class="row-hero-case-study__tagline ff-mono tt-uppercase">{slice.primary.tagline}</div>
-		<div class="row-hero-case-study__info ff-mono tt-uppercase">{slice.primary.info}</div>
-		<div class="row-hero-case-study__brand ff-mono tt-uppercase">{slice.primary.brand}</div>
-		<div class="row-hero-case-study__cta btn__underline ff-mono tt-uppercase">
+		<div class="hero__case-study-tagline ff-mono tt-uppercase">{slice.primary.tagline}</div>
+		<div class="hero__case-study-info ff-mono tt-uppercase">{slice.primary.info}</div>
+		<div class="hero__case-study-brand ff-mono tt-uppercase">{slice.primary.brand}</div>
+		<div class="hero__case-study-cta btn-underline --has-underline ff-mono tt-uppercase">
 			<PrismicLink field={slice.primary.cta_link}>
 				{slice.primary.cta}
 				<svg viewBox="0 0 8 3" fill="none" xmlns="http://www.w3.org/2000/svg"

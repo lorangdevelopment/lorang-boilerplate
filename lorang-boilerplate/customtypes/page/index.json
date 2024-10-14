@@ -27,6 +27,9 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"approach_slice": {
+							"type": "SharedSlice"
+						},
 						"work_list": {
 							"type": "SharedSlice"
 						},

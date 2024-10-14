@@ -3,17 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"heading": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Equipment"
-						}
-					}
-				]
-			},
 			"cta_link": {
 				"__TYPE__": "LinkContent",
 				"value": {
@@ -32,7 +21,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Dolor nulla id proident consequat amet mollit excepteur dolor ut velit."
+							"text": "Magna ea quis amet velit commodo reprehenderit excepteur mollit excepteur eiusmod."
 						}
 					}
 				]
@@ -43,7 +32,18 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Quis nisi labore Lorem mollit. Occaecat ut ipsum ullamco minim. Irure sint nulla consequat nisi ea exercitation cupidatat consectetur consequat tempor in nulla ullamco elit."
+							"text": "Quis duis anim ex Lorem incididunt ea ipsum cupidatat elit laboris aliquip quis."
+						}
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Writing"
 						}
 					}
 				]

@@ -1,5 +1,4 @@
 import { map } from 'nanostores';
-import { browser } from '$app/environment';
 
 export type ScrollValues = {
 	scroll: number;
@@ -16,10 +15,3 @@ export const $scroll = map<ScrollValues>({
 	direction: 0,
 	progress: 0
 });
-
-if (browser) {
-	$scroll.set({
-		...$scroll.get(),
-		scroll: window.scrollY
-	});
-}

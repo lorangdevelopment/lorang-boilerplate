@@ -4,7 +4,11 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = WorkListSlice | FeaturedTextSlice | HeroSlice;
+type PageDocumentDataSlicesSlice =
+	| ApproachSliceSlice
+	| WorkListSlice
+	| FeaturedTextSlice
+	| HeroSlice;
 
 /**
  * Content for Page documents
@@ -146,18 +150,130 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 export type AllDocumentTypes = PageDocument | SettingsDocument;
 
 /**
+ * Primary content in *ApproachSlice → Default → Primary*
+ */
+export interface ApproachSliceSliceDefaultPrimary {
+	/**
+	 * Title field in *ApproachSlice → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: approach_slice.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Paragraph field in *ApproachSlice → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: approach_slice.default.primary.paragraph
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	paragraph: prismic.RichTextField;
+
+	/**
+	 * Cta Link field in *ApproachSlice → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: approach_slice.default.primary.cta_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	cta_link: prismic.LinkField;
+
+	/**
+	 * Cta Link Label field in *ApproachSlice → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: approach_slice.default.primary.cta_link_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	cta_link_label: prismic.KeyTextField;
+
+	/**
+	 * Content Title field in *ApproachSlice → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: approach_slice.default.primary.content_title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	content_title: prismic.RichTextField;
+
+	/**
+	 * Content Paragraph field in *ApproachSlice → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: approach_slice.default.primary.content_paragraph
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	content_paragraph: prismic.RichTextField;
+
+	/**
+	 * Content Title Second field in *ApproachSlice → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: approach_slice.default.primary.content_title_second
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	content_title_second: prismic.RichTextField;
+
+	/**
+	 * Content Paragraph Second field in *ApproachSlice → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: approach_slice.default.primary.content_paragraph_second
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	content_paragraph_second: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ApproachSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ApproachSliceSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<ApproachSliceSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *ApproachSlice*
+ */
+type ApproachSliceSliceVariation = ApproachSliceSliceDefault;
+
+/**
+ * ApproachSlice Shared Slice
+ *
+ * - **API ID**: `approach_slice`
+ * - **Description**: ApproachSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ApproachSliceSlice = prismic.SharedSlice<'approach_slice', ApproachSliceSliceVariation>;
+
+/**
  * Primary content in *FeaturedText → Default → Primary*
  */
 export interface FeaturedTextSliceDefaultPrimary {
 	/**
-	 * Heading field in *FeaturedText → Default → Primary*
+	 * Title field in *FeaturedText → Default → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: featured_text.default.primary.heading
+	 * - **API ID Path**: featured_text.default.primary.title
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	heading: prismic.RichTextField;
+	title: prismic.RichTextField;
 
 	/**
 	 * Cta Link field in *FeaturedText → Default → Primary*
@@ -228,21 +344,21 @@ type FeaturedTextSliceVariation = FeaturedTextSliceDefault;
 export type FeaturedTextSlice = prismic.SharedSlice<'featured_text', FeaturedTextSliceVariation>;
 
 /**
- * Primary content in *HomeHero → Default → Primary*
+ * Primary content in *HeroHome → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
 	/**
-	 * Heading field in *HomeHero → Default → Primary*
+	 * Title field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hero.default.primary.heading
+	 * - **API ID Path**: hero.default.primary.title
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
-	heading: prismic.RichTextField;
+	title: prismic.RichTextField;
 
 	/**
-	 * Paragraph field in *HomeHero → Default → Primary*
+	 * Paragraph field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: *None*
@@ -252,7 +368,7 @@ export interface HeroSliceDefaultPrimary {
 	paragraph: prismic.RichTextField;
 
 	/**
-	 * Time Location field in *HomeHero → Default → Primary*
+	 * Time Location field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -262,7 +378,7 @@ export interface HeroSliceDefaultPrimary {
 	time_location: prismic.KeyTextField;
 
 	/**
-	 * News Link field in *HomeHero → Default → Primary*
+	 * News Link field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -272,7 +388,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link: prismic.LinkField;
 
 	/**
-	 * News Link Label field in *HomeHero → Default → Primary*
+	 * News Link Label field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -282,7 +398,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link_label: prismic.KeyTextField;
 
 	/**
-	 * News Link Second field in *HomeHero → Default → Primary*
+	 * News Link Second field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -292,7 +408,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link_second: prismic.LinkField;
 
 	/**
-	 * News Link Second Label field in *HomeHero → Default → Primary*
+	 * News Link Second Label field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -302,7 +418,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link_second_label: prismic.KeyTextField;
 
 	/**
-	 * News Link Third field in *HomeHero → Default → Primary*
+	 * News Link Third field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -312,7 +428,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link_third: prismic.LinkField;
 
 	/**
-	 * News Link Third Label field in *HomeHero → Default → Primary*
+	 * News Link Third Label field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -322,7 +438,7 @@ export interface HeroSliceDefaultPrimary {
 	news_link_third_label: prismic.KeyTextField;
 
 	/**
-	 * Tagline field in *HomeHero → Default → Primary*
+	 * Tagline field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -332,7 +448,7 @@ export interface HeroSliceDefaultPrimary {
 	tagline: prismic.KeyTextField;
 
 	/**
-	 * Info field in *HomeHero → Default → Primary*
+	 * Info field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -342,7 +458,7 @@ export interface HeroSliceDefaultPrimary {
 	info: prismic.KeyTextField;
 
 	/**
-	 * Brand field in *HomeHero → Default → Primary*
+	 * Brand field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -352,7 +468,7 @@ export interface HeroSliceDefaultPrimary {
 	brand: prismic.KeyTextField;
 
 	/**
-	 * Cta Link field in *HomeHero → Default → Primary*
+	 * Cta Link field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
@@ -362,7 +478,7 @@ export interface HeroSliceDefaultPrimary {
 	cta_link: prismic.LinkField;
 
 	/**
-	 * Cta Link Label field in *HomeHero → Default → Primary*
+	 * Cta Link Label field in *HeroHome → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -373,7 +489,7 @@ export interface HeroSliceDefaultPrimary {
 }
 
 /**
- * Default variation for HomeHero Slice
+ * Default variation for HeroHome Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -386,18 +502,193 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *HomeHero*
+ * Slice variation for *HeroHome*
  */
 type HeroSliceVariation = HeroSliceDefault;
 
 /**
- * HomeHero Shared Slice
+ * HeroHome Shared Slice
  *
  * - **API ID**: `hero`
  * - **Description**: Hero
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
+
+/**
+ * Primary content in *WorkList → Default → Primary*
+ */
+export interface WorkListSliceDefaultPrimary {
+	/**
+	 * Title field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * Cta Link field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.cta_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	cta_link: prismic.LinkField;
+
+	/**
+	 * Cta Link Label field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.cta_link_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	cta_link_label: prismic.KeyTextField;
+
+	/**
+	 * Work Link field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	work_link: prismic.LinkField;
+
+	/**
+	 * Work Image field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	work_image: prismic.ImageField<never>;
+
+	/**
+	 * Work Title field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	work_title: prismic.RichTextField;
+
+	/**
+	 * Work Description field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_description
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	work_description: prismic.RichTextField;
+
+	/**
+	 * Work Cta Link field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_cta_link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	work_cta_link: prismic.LinkField;
+
+	/**
+	 * Work Cta Link Label field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_cta_link_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	work_cta_link_label: prismic.KeyTextField;
+
+	/**
+	 * Work Label field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_label
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	work_label: prismic.RichTextField;
+
+	/**
+	 * Work Link Second field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_link_second
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	work_link_second: prismic.LinkField;
+
+	/**
+	 * Work Image Second field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_image_second
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	work_image_second: prismic.ImageField<never>;
+
+	/**
+	 * Work Title Second field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_title_second
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	work_title_second: prismic.RichTextField;
+
+	/**
+	 * Work Description Second field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_description_second
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	work_description_second: prismic.RichTextField;
+
+	/**
+	 * Work Cta Link Second field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_cta_link_second
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	work_cta_link_second: prismic.LinkField;
+
+	/**
+	 * Work Cta Link Label Second field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_cta_link_label_second
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	work_cta_link_label_second: prismic.KeyTextField;
+
+	/**
+	 * Work Label Second field in *WorkList → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: work_list.default.primary.work_label_second
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	work_label_second: prismic.RichTextField;
+}
 
 /**
  * Default variation for WorkList Slice
@@ -408,7 +699,7 @@ export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
  */
 export type WorkListSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Record<string, never>,
+	Simplify<WorkListSliceDefaultPrimary>,
 	never
 >;
 
@@ -454,6 +745,10 @@ declare module '@prismicio/client' {
 			SettingsDocumentData,
 			SettingsDocumentDataSlicesSlice,
 			AllDocumentTypes,
+			ApproachSliceSlice,
+			ApproachSliceSliceDefaultPrimary,
+			ApproachSliceSliceVariation,
+			ApproachSliceSliceDefault,
 			FeaturedTextSlice,
 			FeaturedTextSliceDefaultPrimary,
 			FeaturedTextSliceVariation,
@@ -463,6 +758,7 @@ declare module '@prismicio/client' {
 			HeroSliceVariation,
 			HeroSliceDefault,
 			WorkListSlice,
+			WorkListSliceDefaultPrimary,
 			WorkListSliceVariation,
 			WorkListSliceDefault
 		};

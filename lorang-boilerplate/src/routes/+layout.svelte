@@ -4,26 +4,14 @@
 	import { PrismicPreview } from '@prismicio/svelte/kit';
 	import { page } from '$app/stores';
 	import { repositoryName } from '$lib/prismicio';
-	import { onMount } from 'svelte';
-	import { setViewportSize } from '../lib/scripts/utils/setViewportSize';
 	import { Transitions } from '../lib/scripts/classes/Transitions';
 	import { Scroll } from '../lib/scripts/classes/Scroll';
 
 	// Initialize the Transitions class
 	const transitions = new Transitions();
 	transitions.init();
-
 	// Initialize the Scroll class
 	Scroll.init();
-
-	onMount(() => {
-		setViewportSize();
-		window.addEventListener('resize', setViewportSize);
-
-		return () => {
-			window.removeEventListener('resize', setViewportSize);
-		};
-	});
 </script>
 
 <svelte:head>

@@ -1,8 +1,8 @@
 {
-	"id": "featured_text",
+	"id": "approach_slice",
 	"type": "SharedSlice",
-	"name": "FeaturedText",
-	"description": "FeaturedText",
+	"name": "ApproachSlice",
+	"description": "ApproachSlice",
 	"variations": [
 		{
 			"id": "default",
@@ -18,7 +18,16 @@
 						"label": "Title",
 						"placeholder": "",
 						"allowTargetBlank": true,
-						"multi": "heading1,heading2,heading3,strong,em"
+						"multi": "heading1,heading2,heading3,strong"
+					}
+				},
+				"paragraph": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Paragraph",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"multi": "heading5,strong,em"
 					}
 				},
 				"cta_link": {
@@ -37,19 +46,37 @@
 						"placeholder": ""
 					}
 				},
-				"paragraph": {
+				"content_title": {
 					"type": "StructuredText",
 					"config": {
-						"label": "Paragraph",
+						"label": "Content Title",
 						"placeholder": "",
 						"allowTargetBlank": true,
 						"multi": "paragraph,preformatted,strong,em"
 					}
 				},
-				"paragraph_second": {
+				"content_paragraph": {
 					"type": "StructuredText",
 					"config": {
-						"label": "Paragraph Second",
+						"label": "Content Paragraph",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"multi": "paragraph,preformatted,strong,em"
+					}
+				},
+				"content_title_second": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Content Title Second",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"multi": "paragraph,preformatted,strong,em"
+					}
+				},
+				"content_paragraph_second": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Content Paragraph Second",
 						"placeholder": "",
 						"allowTargetBlank": true,
 						"multi": "paragraph,preformatted,strong,em"

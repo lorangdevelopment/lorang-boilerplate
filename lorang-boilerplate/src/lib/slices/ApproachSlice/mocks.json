@@ -1,0 +1,87 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Ocean"
+						}
+					}
+				]
+			},
+			"paragraph": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading5",
+						"content": {
+							"text": "These"
+						}
+					}
+				]
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"cta_link_label": {
+				"__TYPE__": "FieldContent",
+				"value": "known",
+				"type": "Text"
+			},
+			"content_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ex non amet aliqua cillum anim aliqua deserunt. Aliquip est et elit."
+						}
+					}
+				]
+			},
+			"content_paragraph": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sunt anim veniam non aliqua. Esse ea sint cupidatat nulla nisi aliquip dolor culpa commodo ullamco aliqua."
+						}
+					}
+				]
+			},
+			"content_title_second": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Voluptate et velit ut quis veniam laboris mollit Lorem laborum."
+						}
+					}
+				]
+			},
+			"content_paragraph_second": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ipsum ea enim culpa elit ea anim magna laborum eu consequat. Enim elit duis ex non non nostrud et officia irure."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
