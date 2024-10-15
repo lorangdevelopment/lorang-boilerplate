@@ -1046,3 +1046,95 @@
 	font-weight: 300;
 	line-height: 1.4;
 }
+
+
+
+.error__row {
+	overflow: hidden;
+	width: 100vw;
+	color: var(--text-color);
+    background: var(--bg-color);
+}
+
+.error__scroll-content {
+  display: flex;
+  overflow: hidden;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.error__content {
+	width: 100%;
+  display: flex;
+  padding: 32px 0;
+  position: relative;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.error__message.--large {
+	display: flex;
+	overflow: visible;
+	white-space: nowrap;
+	line-height: 1;
+}
+
+.error__message.--large div {
+	padding: 0 0.15em;
+	font-size: 130px;
+}
+
+@media (min-width: 768px) {
+	.error__message.--large div {
+	  font-size: 190px;
+	}
+}
+
+.error__message.--small {
+	display: flex;
+	overflow: visible;
+	white-space: nowrap;
+	line-height: 1;
+}
+
+.error__message.--small div {
+	padding: 0 0.35em;
+	font-size: 14px;
+}
+
+.error__message.--large.--fowards div {
+	animation: error__message--fowards 25s linear infinite;
+}
+
+.error__message.--large.--backwards div {
+	animation: error__message--backwards 25s linear infinite;
+}
+
+.error__message.--small.--fowards div {
+	animation: error__message--fowards 5s linear infinite;
+}
+
+.error__message.--small.--backwards div {
+	animation: error__message--backwards 5s linear infinite;
+}
+
+@keyframes error__message--fowards {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes error__message--backwards {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
