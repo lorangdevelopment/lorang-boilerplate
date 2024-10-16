@@ -64,13 +64,14 @@
 		</div>
 	</div>
 	<div
-		class="hero__case-study grid-row-1 grid-column-2 grid-row-md-1 grid-column-md-12 pl-15 pr-15 --has-bg --has-text-color"
+		class="case-study grid-row-1 grid-column-2 grid-row-md-1 grid-column-md-12 pl-15 pr-15 --has-bg --has-text-color"
 		style="--text-color: #ffffff; --bg-color: #000000;"
+	
 	>
-		<div class="hero__case-study-media-wrap">
-			<div class="hero__case-study-media">
+		<div class="case-study__media-wrap">
+			<div class="case-study__media">
 				<video
-					class="hero__case-study-video"
+					class="case-study__video"
 					src="/Nightjar-Digital-Product-Company.mp4"
 					autoplay
 					muted
@@ -80,10 +81,10 @@
 				></video>
 			</div>
 		</div>
-		<div class="hero__case-study-tagline ff-mono tt-uppercase">{slice.primary.tagline}</div>
-		<div class="hero__case-study-info ff-mono tt-uppercase">{slice.primary.info}</div>
-		<div class="hero__case-study-brand ff-mono tt-uppercase">{slice.primary.brand}</div>
-		<div class="hero__case-study-cta btn-underline --has-underline ff-mono tt-uppercase">
+		<div class="case-study__tagline ff-mono tt-uppercase">{slice.primary.tagline}</div>
+		<div class="case-study__info ff-mono tt-uppercase">{slice.primary.info}</div>
+		<div class="case-study__brand ff-mono tt-uppercase">{slice.primary.brand}</div>
+		<div class="case-study__cta btn-underline --has-underline ff-mono tt-uppercase">
 			<PrismicLink field={slice.primary.cta_link}>
 				{slice.primary.cta}
 				<svg viewBox="0 0 8 3" fill="none" xmlns="http://www.w3.org/2000/svg"

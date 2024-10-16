@@ -13,7 +13,7 @@
 				<h1>{$page.status}: {$page.error?.message ?? 'An error occurred'}</h1>
 			</div>
 			<div class="error__content">
-				<div class="error__message tt-uppercase --large --fowards">
+				<div class="error__message tt-uppercase --large --forwards">
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
 				</div>
@@ -34,7 +34,7 @@
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
 				</div>
-				<div class="error__message tt-uppercase --small  --fowards">
+				<div class="error__message tt-uppercase --small  --forwards">
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
@@ -47,7 +47,7 @@
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
 				</div>
-				<div class="error__message tt-uppercase --large --fowards">
+				<div class="error__message tt-uppercase --large --forwards">
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
 					<div>{$page.status}: {$page.error?.message ?? 'An error occurred'}</div>
 				</div>

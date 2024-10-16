@@ -6,16 +6,16 @@
 </script>
 
 <section
-	class="featuredtext position-relative"
+	class="featured-text position-relative"
 	data-scroll
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	<div class="featuredtext__row pl-15 pr-15">
-		<div class="featuredtext__row-title h2__title">
+	<div class="featured-text__row pl-15 pr-15">
+		<div class="featured-text__row-title h2__title">
 			<PrismicRichText field={slice.primary.title} />
 		</div>
-		<div class="featuredtext__row-cta btn-underline --has-underline ff-mono tt-uppercase">
+		<div class="featured-text__row-cta btn-underline --has-underline ff-mono tt-uppercase">
 			<PrismicLink field={slice.primary.cta_link}>
 				{slice.primary.cta_link_label}
 				<svg viewBox="0 0 8 3" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@
 				>
 			</PrismicLink>
 		</div>
-		<div class="featuredtext__row-paragraph">
+		<div class="featured-text__row-paragraph">
 			<div>
 				<h5>
 					<PrismicRichText field={slice.primary.paragraph} />

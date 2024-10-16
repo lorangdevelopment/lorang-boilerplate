@@ -6,7 +6,7 @@
 </script>
 
 <section
-	class="approachslice position-relative"
+	class="approach-slice position-relative"
 	data-scroll
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
@@ -29,20 +29,20 @@
 				>
 			</PrismicLink>
 		</div>
-		<div class="approach-row-content">
-			<div class="approach-row-content__inner">
-				<div class="approach-row-content__title ff-mono tt-uppercase">
+		<div class="approach-row__content">
+			<div class="approach-row__content-inner">
+				<div class="approach-row__content-title ff-mono tt-uppercase">
 					<PrismicRichText field={slice.primary.content_title} />
 				</div>
-				<div class="approach-row-content__paragraph">
+				<div class="approach-row__content-paragraph">
 					<PrismicRichText field={slice.primary.content_paragraph} />
 				</div>
 			</div>
-			<div class="approach-row-content__inner">
-				<div class="approach-row-content__title ff-mono tt-uppercase">
+			<div class="approach-row__content-inner">
+				<div class="approach-row__content-title ff-mono tt-uppercase">
 					<PrismicRichText field={slice.primary.content_title_second} />
 				</div>
-				<div class="approach-row-content__paragraph">
+				<div class="approach-row__content-paragraph">
 					<PrismicRichText field={slice.primary.content_paragraph_second} />
 				</div>
 			</div>

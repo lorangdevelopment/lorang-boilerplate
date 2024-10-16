@@ -6,16 +6,16 @@
 </script>
 
 <section
-	class="worklist mb-60 mb-lg-70 position-relative"
+	class="work-list mb-60 mb-lg-70 position-relative"
 	data-scroll
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	<div class="worklist__row pl-15 pr-15">
-		<div class="worklist__row-title h2__title">
+	<div class="work-list__row pl-15 pr-15">
+		<div class="work-list__row-title h2__title">
 			<PrismicRichText field={slice.primary.title} />
 		</div>
-		<div class="worklist__row-cta btn-underline --has-underline ff-mono tt-uppercase">
+		<div class="work-list__row-cta btn-underline --has-underline ff-mono tt-uppercase">
 			<PrismicLink field={slice.primary.cta_link}>
 				{slice.primary.cta_link_label}
 				<svg viewBox="0 0 8 3" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -27,68 +27,68 @@
 			</PrismicLink>
 		</div>
 	</div>
-	<div class="worklist__container pl-15 pr-15">
-		<div class="worklist__list">
-			<div class="worklist__list-item --has-underline position-relative">
-				<PrismicLink field={slice.primary.work_link} class="worklist__list-link td-none">
-					<div class="worklist__media-wrapper position-relative">
-						<div class="worklist__media-container">
+	<div class="work-list__container pl-15 pr-15">
+		<div class="work-list__list">
+			<div class="work-list__list-item --has-underline position-relative">
+				<PrismicLink field={slice.primary.work_link} class="work-list__list-link td-none">
+					<div class="work-list__media-wrapper position-relative">
+						<div class="work-list__media-container">
 							<PrismicImage
 								field={slice.primary.work_image}
-								class="worklist__media-image"
+								class="work-list__media-image"
 							/>
 						</div>
 					</div>
-					<div class="worklist__content">
-						<div class="worklist__content-title">
+					<div class="work-list__content">
+						<div class="work-list__content-title">
 							<PrismicRichText field={slice.primary.work_title} />
 						</div>
-						<div class="worklist__content-description">
+						<div class="work-list__content-description">
 							<PrismicRichText field={slice.primary.work_description} />
 						</div>
 					</div>
 				</PrismicLink>
 
 				<div class="row-work-subheading ff-mono tt-uppercase">
-					<PrismicLink field={slice.primary.work_cta_link} class="worklist__content-link">
+					<PrismicLink field={slice.primary.work_cta_link} class="work-list__content-link">
 						{slice.primary.work_cta_link_label}
 					</PrismicLink>
-					<span class="worklist__content-label"
+					<span class="work-list__content-label"
 						><PrismicRichText field={slice.primary.work_label} /></span
 					>
 				</div>
 			</div>
 		</div>
-		<div class="worklist__list">
-			<div class="worklist__list-item --has-underline position-relative">
+		<div class="work-list__list">
+			<div class="work-list__list-item --has-underline position-relative">
 				<PrismicLink
 					field={slice.primary.work_link_second}
-					class="worklist__list-link td-none"
+					class="work-list__list-link td-none"
 				>
-					<div class="worklist__media-wrapper position-relative">
-						<div class="worklist__media-container">
+					<div class="work-list__media-wrapper position-relative">
+						<div class="work-list__media-container">
 							<PrismicImage
 								field={slice.primary.work_image_second}
-								class="worklist__media-image"
+								class="work-list__media-image"
 							/>
 						</div>
 					</div>
 				</PrismicLink>
-				<div class="worklist__content">
-					<div class="worklist__content-title">
+				<div class="work-list__content">
+					<div class="work-list__content-title">
 						<PrismicRichText field={slice.primary.work_title_second} />
 					</div>
-					<div class="worklist__content-description">
+					<div class="work-list__content-description">
 						<PrismicRichText field={slice.primary.work_description_second} />
 					</div>
 				</div>
 				<div class="row-work-subheading ff-mono tt-uppercase">
 					<PrismicLink
 						field={slice.primary.work_cta_link_second}
-						class="worklist__content-link"
+						class="work-list__content-link"
 						>{slice.primary.work_cta_link_label_second}</PrismicLink
 					>
-					<span class="worklist__content-label"
+					<span class="work-list__content-label"
 						><PrismicRichText field={slice.primary.work_label_second} /></span
 					>
 				</div>

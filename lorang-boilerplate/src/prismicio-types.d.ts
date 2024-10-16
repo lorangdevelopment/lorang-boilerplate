@@ -147,7 +147,71 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
-export type AllDocumentTypes = PageDocument | SettingsDocument;
+type SiteHeaderDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Site Header documents
+ */
+interface SiteHeaderDocumentData {
+	/**
+	 * Slice Zone field in *Site Header*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: site_header.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices: prismic.SliceZone<SiteHeaderDocumentDataSlicesSlice> /**
+	 * Meta Title field in *Site Header*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: site_header.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */;
+	meta_title: prismic.KeyTextField;
+
+	/**
+	 * Meta Description field in *Site Header*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: site_header.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	meta_description: prismic.KeyTextField;
+
+	/**
+	 * Meta Image field in *Site Header*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: site_header.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Site Header document from Prismic
+ *
+ * - **API ID**: `site_header`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SiteHeaderDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<SiteHeaderDocumentData>,
+	'site_header',
+	Lang
+>;
+
+export type AllDocumentTypes = PageDocument | SettingsDocument | SiteHeaderDocument;
 
 /**
  * Primary content in *ApproachSlice → Default → Primary*
@@ -744,6 +808,9 @@ declare module '@prismicio/client' {
 			SettingsDocument,
 			SettingsDocumentData,
 			SettingsDocumentDataSlicesSlice,
+			SiteHeaderDocument,
+			SiteHeaderDocumentData,
+			SiteHeaderDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			ApproachSliceSlice,
 			ApproachSliceSliceDefaultPrimary,
