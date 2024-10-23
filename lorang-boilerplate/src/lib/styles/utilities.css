@@ -167,13 +167,19 @@ template {
 	color: #000000;
 }
 :root {
-	--color-black: #0000000;
-	--color-white: #fffffff;
-}
-:root {
+	--color-black: #000000;
+	--color-white: #ffffff;
+	--color-grey: #f2f2f2;
+	--text-color : var(--color-black);
+	--bg-color: var(--color-white);
+
 	font-family: 'Suisse Intl', 'Lucida Sans', Tahoma, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+:root[data-theme="black"] {
+	--text-color: var(--color-white);
+	--bg-color: var(--color-black);
 }
 *,
 *::before,

@@ -29,7 +29,11 @@
 		<meta name="twitter:card" content="summary_large_image" />
 	{/if}
 </svelte:head>
-<Header/>
+
+<Header header_navigation={$page.data.header.header_navigation}
+menu_label_first={$page.data.header.menu_label_first}
+menu_label_second={$page.data.header.menu_label_second}
+/>
 <main>
 	<!--
 		<ul>
@@ -41,5 +45,6 @@
 	-->
 	<slot />
 </main>
-<Footer/>
+<Footer footer_navigation={$page.data.footer.footer_navigation}/>
+
 <PrismicPreview {repositoryName} />

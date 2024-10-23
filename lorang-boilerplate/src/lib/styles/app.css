@@ -545,15 +545,15 @@
 	opacity: 1;
 	transform: translateZ(0);
 	transition:
-	opacity 0.25s 0.75s linear,
-	transform 0.65s 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+		opacity 0.25s 0.75s linear,
+		transform 0.65s 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 @media (min-width: 768px) {
 	.featured-text.is-inview .featured-text__row-cta {
 		transition:
-		opacity 0.25s 0.5s linear,
-		transform 0.65s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+			opacity 0.25s 0.5s linear,
+			transform 0.65s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 }
 
@@ -592,8 +592,8 @@
 @media (min-width: 768px) {
 	.featured-text.is-inview .featured-text__row-paragraph {
 		transition:
-		opacity 0.35s 0.75s linear,
-		transform 0.65s 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+			opacity 0.35s 0.75s linear,
+			transform 0.65s 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 }
 
@@ -918,8 +918,8 @@
 @media (min-width: 768px) {
 	.approach-slice.is-inview .approach-row__paragraph {
 		transition:
-		opacity 0.35s 0.75s linear,
-		transform 0.65s 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+			opacity 0.35s 0.75s linear,
+			transform 0.65s 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 }
 
@@ -962,8 +962,8 @@
 @media (min-width: 768px) {
 	.approach-slice.is-inview .approach-row__cta {
 		transition:
-		opacity 0.35s 0.5s linear,
-		transform 0.65s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+			opacity 0.35s 0.5s linear,
+			transform 0.65s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 	}
 }
 
@@ -1047,32 +1047,32 @@
 	line-height: 1.4;
 }
 
-
+/*Space for other slices later on*/
 
 .error__row {
 	overflow: hidden;
 	width: 100vw;
 	color: var(--text-color);
-    background: var(--bg-color);
+	background: var(--bg-color);
 }
 
 .error__scroll-content {
-  display: flex;
-  overflow: hidden;
-  min-height: 100vh;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
+	display: flex;
+	overflow: hidden;
+	min-height: 100vh;
+	align-items: center;
+	flex-direction: column;
+	justify-content: flex-end;
 }
 
 .error__content {
 	width: 100%;
-  display: flex;
-  padding: 32px 0;
-  position: relative;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: flex-end;
+	display: flex;
+	padding: 32px 0;
+	position: relative;
+	min-height: 100vh;
+	flex-direction: column;
+	justify-content: flex-end;
 }
 
 .error__message.--large {
@@ -1089,7 +1089,7 @@
 
 @media (min-width: 768px) {
 	.error__message.--large div {
-	  font-size: 190px;
+		font-size: 190px;
 	}
 }
 
@@ -1139,7 +1139,200 @@
 	}
 }
 
+.header {
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 106;
+	position: fixed;
+	color: var(--text-color);
+	background: var(--bg-color);
+	transition: background 0.2s linear, color 0.2s linear;
+}
+  
+  .header__navigation {
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100vh;
+	overflow: hidden;
+	position: fixed;
+	transform: translateY(-100%);
+	transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+	color: #ffffff;
+	background-color: #000000;
+  }
+  
+  .header__navigation.--open {
+	transform: translateY(0);
+  }
+  
+  @media (min-width: 768px) {
+	.header__navigation {
+	  left: calc(66.66666% + 5px);
+	}
+  }
+  
+  .header__row {
+	z-index: 1;
+	position: relative;
+	align-items: start;
+	display: grid;
+	row-gap: 16px;
+	column-gap: 16px;
+	grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (min-width: 768px) {
+	.header__row {
+	  grid-template-columns: repeat(12, 1fr);
+	}
+  }
+  
+  .header__logo-wrapper {
+	display: flex;
+	flex-grow: 0;
+	align-items: center;
+	flex-shrink: 0;
+	grid-column: 1;
+  }
+  
+  @media (min-width: 768px) {
+	.header__logo-wrapper {
+	  grid-column: 1 / span 3;
+	}
+  }
+  
+  .header__logo {
+	height: 42px;
+	display: flex;
+	align-items: center;
+  }
+  
+  .header__logo svg {
+	color: var(--text-color);
+	width: 80px;
+	height: auto;
+	display: block;
+	overflow: visible;
+	position: relative;
+  }
+  
+  .header__navigation.--open + .header__row .header__logo svg {
+	color: #ffffff;
+  }
+  
+  @media (min-width: 768px) {
+	.header__navigation.--open + .header__row .header__logo svg {
+	  color: var(--text-color);
+	}
+  }
+  
+  .header__nav-toggle {
+	height: 100%;
+	display: flex;
+	grid-column: 12;
+	position: relative;
+	align-items: center;
+	justify-content: flex-end;
+	font-size: 14px;
+  }
+  
+  .header__navigation.--open + .header__row .header__nav-button {
+	color: #ffffff;
+  }
 
+  .header__navigation.--open + .header__row .header__nav-button span:nth-child(1) {
+	display: none;
+  }
 
+  .header__navigation + .header__row .header__nav-button span:nth-child(2) {
+	display: none;
+  }
 
+  .header__navigation.--open + .header__row .header__nav-button span:nth-child(2) {
+	display: block;
+  }
 
+  .header__navigation.--open + .header__row .header__nav-chevron {
+	color: #ffffff !important;
+	rotate: -180deg;
+	transition: rotate 1s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+  }
+  
+  .header__navigation-inner {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	padding: 128px 16px 96px;
+	overflow: auto;
+	position: absolute;
+	transform: translateY(100%);
+	transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+	align-items: flex-start;
+  }
+  
+  @media (min-width: 768px) {
+	.header__navigation-inner {
+	  padding: 64px 16px 16px;
+	}
+  }
+  
+  .header__navigation.--open .header__navigation-inner {
+	transform: translateY(0);
+  }
+  
+  .header__navigation-content {
+	width: 100%;
+	display: flex;
+	min-height: 100%;
+	align-items: flex-start;
+	flex-direction: column;
+	justify-content: space-between;
+  }
+  
+  .header__nav {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .header__nav-item {
+	display: inline-block;
+	position: relative;
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 0.75;
+	margin-bottom: 32px;
+	text-decoration: none;
+	opacity: 0;
+  }
+  
+  .header__navigation.--open .header__nav-item {
+	opacity: 1;
+  }
+  
+  .header__navigation.--open .header__nav-item:nth-child(1) {
+	transition: opacity 0s 0.2s linear;
+  }
+  
+  .header__navigation.--open .header__nav-item:nth-child(2) {
+	transition: opacity 0.35s 0.2s linear;
+  }
+  
+  .header__navigation.--open .header__nav-item:nth-child(3) {
+	transition: opacity 0.70s 0.2s linear;
+  }
+  
+  .header__navigation.--open .header__nav-item:nth-child(4) {
+	transition: opacity 1.05s 0.2s linear;
+  }
+  
+  .header__navigation.--open .header__nav-item:nth-child(5) {
+	transition: opacity 1.4s 0.2s linear;
+  }
+  
+  .header__navigation.--open .header__nav-item:nth-child(6) {
+	transition: opacity 1.75s 0.2s linear;
+  }

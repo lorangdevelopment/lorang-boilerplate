@@ -4,6 +4,192 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type FooterDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+	/**
+	 * Slice Zone field in *Footer*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices: prismic.SliceZone<FooterDocumentDataSlicesSlice> /**
+	 * Meta Title field in *Footer*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: footer.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */;
+	meta_title: prismic.KeyTextField;
+
+	/**
+	 * Meta Description field in *Footer*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: footer.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	meta_description: prismic.KeyTextField;
+
+	/**
+	 * Meta Image field in *Footer*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: footer.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<FooterDocumentData>,
+	'footer',
+	Lang
+>;
+
+/**
+ * Item in *Header → Header Navigation*
+ */
+export interface HeaderDocumentDataHeaderNavigationItem {
+	/**
+	 * Link field in *Header → Header Navigation*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.header_navigation[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+
+	/**
+	 * Link Label field in *Header → Header Navigation*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.header_navigation[].link_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	link_label: prismic.KeyTextField;
+}
+
+type HeaderDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Header documents
+ */
+interface HeaderDocumentData {
+	/**
+	 * Header Navigation field in *Header*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.header_navigation[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	header_navigation: prismic.GroupField<Simplify<HeaderDocumentDataHeaderNavigationItem>>;
+
+	/**
+	 * Menu Label First field in *Header*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.menu_label_first
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	menu_label_first: prismic.KeyTextField;
+
+	/**
+	 * Menu Label Second field in *Header*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.menu_label_second
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	menu_label_second: prismic.KeyTextField;
+
+	/**
+	 * Slice Zone field in *Header*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices: prismic.SliceZone<HeaderDocumentDataSlicesSlice> /**
+	 * Meta Title field in *Header*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: header.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */;
+	meta_title: prismic.KeyTextField;
+
+	/**
+	 * Meta Description field in *Header*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: header.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	meta_description: prismic.KeyTextField;
+
+	/**
+	 * Meta Image field in *Header*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: header.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Header document from Prismic
+ *
+ * - **API ID**: `header`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HeaderDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<HeaderDocumentData>,
+	'header',
+	Lang
+>;
+
 type PageDocumentDataSlicesSlice =
 	| ApproachSliceSlice
 	| WorkListSlice
@@ -147,71 +333,7 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 	Lang
 >;
 
-type SiteHeaderDocumentDataSlicesSlice = never;
-
-/**
- * Content for Site Header documents
- */
-interface SiteHeaderDocumentData {
-	/**
-	 * Slice Zone field in *Site Header*
-	 *
-	 * - **Field Type**: Slice Zone
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: site_header.slices[]
-	 * - **Tab**: Main
-	 * - **Documentation**: https://prismic.io/docs/field#slices
-	 */
-	slices: prismic.SliceZone<SiteHeaderDocumentDataSlicesSlice> /**
-	 * Meta Title field in *Site Header*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: A title of the page used for social media and search engines
-	 * - **API ID Path**: site_header.meta_title
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/field#key-text
-	 */;
-	meta_title: prismic.KeyTextField;
-
-	/**
-	 * Meta Description field in *Site Header*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: A brief summary of the page
-	 * - **API ID Path**: site_header.meta_description
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/field#key-text
-	 */
-	meta_description: prismic.KeyTextField;
-
-	/**
-	 * Meta Image field in *Site Header*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: site_header.meta_image
-	 * - **Tab**: SEO & Metadata
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	meta_image: prismic.ImageField<never>;
-}
-
-/**
- * Site Header document from Prismic
- *
- * - **API ID**: `site_header`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type SiteHeaderDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
-	Simplify<SiteHeaderDocumentData>,
-	'site_header',
-	Lang
->;
-
-export type AllDocumentTypes = PageDocument | SettingsDocument | SiteHeaderDocument;
+export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument | SettingsDocument;
 
 /**
  * Primary content in *ApproachSlice → Default → Primary*
@@ -802,15 +924,19 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			FooterDocument,
+			FooterDocumentData,
+			FooterDocumentDataSlicesSlice,
+			HeaderDocument,
+			HeaderDocumentData,
+			HeaderDocumentDataHeaderNavigationItem,
+			HeaderDocumentDataSlicesSlice,
 			PageDocument,
 			PageDocumentData,
 			PageDocumentDataSlicesSlice,
 			SettingsDocument,
 			SettingsDocumentData,
 			SettingsDocumentDataSlicesSlice,
-			SiteHeaderDocument,
-			SiteHeaderDocumentData,
-			SiteHeaderDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			ApproachSliceSlice,
 			ApproachSliceSliceDefaultPrimary,

@@ -1,6 +1,6 @@
 {
 	"format": "page",
-	"id": "site_header",
+	"id": "footer",
 	"json": {
 		"Main": {
 			"slices": {
@@ -39,7 +39,7 @@
 			}
 		}
 	},
-	"label": "Site Header",
+	"label": "Footer",
 	"repeatable": false,
 	"status": true
 }
